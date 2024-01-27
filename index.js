@@ -5,9 +5,26 @@ const app = express();
 const port = 3000;
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET");
-  next();
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("Access-Control-Allow-Credentials", true);
+
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Methods", "GET");
+    res.status(200).send();
+  } else {
+    next();
+  }
+});
+
+app.options("/", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET");
+  res.status(200).send();
 });
 
 app.get("/", async (req, res) => {
