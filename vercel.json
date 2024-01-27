@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/getElevation",
-      "dest": "https://dss-express-server.vercel.app/getElevation",
+      "dest": "https://dss-express-server.vercel.app",
       "methods": ["GET"]
     }
   ]
