@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/getElevation",
+      "dest": "https://dss-express-server.vercel.app/getElevation",
+      "methods": ["GET"]
+    }
+  ]
+}
