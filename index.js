@@ -10,7 +10,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/getElevation", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const { lat, lon } = req.query;
 
